@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" font-family="Segoe UI, system-ui, -apple-system, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#11161d"/>
+    </linearGradient>
+    <linearGradient id="rack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#1c2530"/>
+      <stop offset="1" stop-color="#141b24"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="640" rx="16" fill="url(#bg)"/>
+
+  <!-- Title -->
+  <text x="600" y="48" text-anchor="middle" fill="#f0f6fc" font-size="30" font-weight="700" letter-spacing="2">HYBRID CLOUD ARCHITECTURE</text>
+  <text x="600" y="74" text-anchor="middle" fill="#8b949e" font-size="15">One control plane · Two homes for your workloads</text>
+
+  <!-- ON-PREM panel -->
+  <rect x="40" y="100" width="400" height="400" rx="14" fill="#161b22" stroke="#58a6ff" stroke-width="2"/>
+  <text x="240" y="134" text-anchor="middle" fill="#58a6ff" font-size="17" font-weight="700" letter-spacing="1">🏢 ON-PREMISES DATA CENTER</text>
+  <text x="240" y="156" text-anchor="middle" fill="#8b949e" font-size="12">192.168.0.0/16 · VMware / Kubernetes</text>
+
+  <!-- Server racks -->
+  <g>
+    <rect x="70" y="175" width="100" height="260" rx="8" fill="url(#rack)" stroke="#30363d"/>
+    <rect x="80" y="190" width="80" height="28" rx="4" fill="#0d1117" stroke="#30363d"/><circle cx="90" cy="204" r="4" fill="#3fb950"/><text x="120" y="209" fill="#8b949e" font-size="11">web-01</text>
+    <rect x="80" y="226" width="80" height="28" rx="4" fill="#0d1117" stroke="#30363d"/><circle cx="90" cy="240" r="4" fill="#3fb950"/><text x="120" y="245" fill="#8b949e" font-size="11">web-02</text>
+    <rect x="80" y="262" width="80" height="28" rx="4" fill="#0d1117" stroke="#30363d"/><circle cx="90" cy="276" r="4" fill="#3fb950"/><text x="120" y="281" fill="#8b949e" font-size="11">api-01</text>
+    <rect x="80" y="298" width="80" height="28" rx="4" fill="#0d1117" stroke="#30363d"/><circle cx="90" cy="312" r="4" fill="#d29922"/><text x="120" y="317" fill="#8b949e" font-size="11">api-02</text>
+    <rect x="80" y="334" width="80" height="28" rx="4" fill="#0d1117" stroke="#30363d"/><circle cx="90" cy="348" r="4" fill="#3fb950"/><text x="120" y="353" fill="#8b949e" font-size="11">db-01</text>
+    <rect x="80" y="370" width="80" height="28" rx="4" fill="#0d1117" stroke="#30363d"/><circle cx="90" cy="384" r="4" fill="#3fb950"/><text x="120" y="389" fill="#8b949e" font-size="11">db-02</text>
+    <text x="120" y="455" text-anchor="middle" fill="#8b949e" font-size="12">Compute cluster</text>
+  </g>
+  <g>
+    <rect x="185" y="175" width="100" height="260" rx="8" fill="url(#rack)" stroke="#30363d"/>
+    <rect x="195" y="190" width="80" height="60" rx="4" fill="#0d1117" stroke="#30363d"/><circle cx="205" cy="220" r="4" fill="#3fb950"/><text x="235" y="224" text-anchor="middle" fill="#8b949e" font-size="11">SAN</text>
+    <rect x="195" y="258" width="80" height="60" rx="4" fill="#0d1117" stroke="#30363d"/><circle cx="205" cy="288" r="4" fill="#3fb950"/><text x="235" y="292" text-anchor="middle" fill="#8b949e" font-size="11">NAS</text>
+    <rect x="195" y="326" width="80" height="60" rx="4" fill="#0d1117" stroke="#30363d"/><circle cx="205" cy="356" r="4" fill="#3fb950"/><text x="235" y="360" text-anchor="middle" fill="#8b949e" font-size="11">Backup</text>
+    <text x="235" y="455" text-anchor="middle" fill="#8b949e" font-size="12">Storage array</text>
+  </g>
+  <g>
+    <rect x="300" y="175" width="110" height="260" rx="8" fill="url(#rack)" stroke="#30363d"/>
+    <rect x="312" y="190" width="86" height="100" rx="4" fill="#0d1117" stroke="#58a6ff" stroke-width="1.5"/>
+    <text x="355" y="232" text-anchor="middle" fill="#58a6ff" font-size="13" font-weight="700">FW</text>
+    <text x="355" y="252" text-anchor="middle" fill="#8b949e" font-size="10">Firewall</text>
+    <rect x="312" y="300" width="86" height="100" rx="4" fill="#0d1117" stroke="#a371f7" stroke-width="1.5"/>
+    <text x="355" y="342" text-anchor="middle" fill="#a371f7" font-size="13" font-weight="700">VPN</text>
+    <text x="355" y="362" text-anchor="middle" fill="#8b949e" font-size="10">Gateway</text>
+    <text x="355" y="455" text-anchor="middle" fill="#8b949e" font-size="12">Edge / Security</text>
+  </g>
+
+  <!-- PUBLIC CLOUD panel -->
+  <rect x="760" y="100" width="400" height="400" rx="14" fill="#161b22" stroke="#a371f7" stroke-width="2"/>
+  <text x="960" y="134" text-anchor="middle" fill="#a371f7" font-size="17" font-weight="700" letter-spacing="1">☁️ PUBLIC CLOUD</text>
+  <text x="960" y="156" text-anchor="middle" fill="#8b949e" font-size="12">ap-southeast-1 · Multi-AZ</text>
+
+  <rect x="790" y="175" width="340" height="130" rx="8" fill="#0d1117" stroke="#30363d"/>
+  <text x="810" y="200" fill="#a371f7" font-size="13" font-weight="700">VPC · Production</text>
+  <text x="1110" y="200" text-anchor="end" fill="#8b949e" font-size="11">10.0.0.0/16</text>
+  <rect x="810" y="215" width="96" height="70" rx="6" fill="#1c2530" stroke="#3fb950"/><text x="858" y="242" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="700">EC2</text><text x="858" y="262" text-anchor="middle" fill="#8b949e" font-size="10">app-a</text>
+  <rect x="922" y="215" width="96" height="70" rx="6" fill="#1c2530" stroke="#3fb950"/><text x="970" y="242" text-anchor="middle" fill="#3fb950" font-size="12" font-weight="700">EC2</text><text x="970" y="262" text-anchor="middle" fill="#8b949e" font-size="10">app-b</text>
+  <rect x="1034" y="215" width="76" height="70" rx="6" fill="#1c2530" stroke="#58a6ff"/><text x="1072" y="242" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="700">ALB</text><text x="1072" y="262" text-anchor="middle" fill="#8b949e" font-size="10">edge</text>
+
+  <rect x="790" y="320" width="340" height="100" rx="8" fill="#0d1117" stroke="#30363d"/>
+  <text x="810" y="345" fill="#a371f7" font-size="13" font-weight="700">VPC · Analytics</text>
+  <text x="1110" y="345" text-anchor="end" fill="#8b949e" font-size="11">10.1.0.0/16</text>
+  <rect x="810" y="358" width="150" height="46" rx="6" fill="#1c2530" stroke="#d29922"/><text x="885" y="386" text-anchor="middle" fill="#d29922" font-size="12" font-weight="700">⬡ EKS</text>
+  <rect x="972" y="358" width="138" height="46" rx="6" fill="#1c2530" stroke="#d29922"/><text x="1041" y="386" text-anchor="middle" fill="#d29922" font-size="12" font-weight="700">◉ Redshift</text>
+
+  <rect x="790" y="432" width="340" height="52" rx="8" fill="#0d1117" stroke="#30363d"/>
+  <text x="960" y="463" text-anchor="middle" fill="#8b949e" font-size="12">Managed: <tspan fill="#58a6ff">RDS</tspan> · <tspan fill="#3fb950">S3</tspan> · <tspan fill="#a371f7">CloudWatch</tspan> · <tspan fill="#d29922">IAM</tspan></text>
+
+  <!-- Connections -->
+  <line x1="440" y1="250" x2="760" y2="250" stroke="#3fb950" stroke-width="3" stroke-dasharray="10 6" filter="url(#glow)"/>
+  <circle cx="600" cy="250" r="16" fill="#0d1117" stroke="#3fb950" stroke-width="2"/>
+  <text x="600" y="257" text-anchor="middle" fill="#3fb950" font-size="16">🔒</text>
+  <text x="600" y="228" text-anchor="middle" fill="#3fb950" font-size="13" font-weight="700">IPsec VPN tunnel</text>
+  <text x="600" y="290" text-anchor="middle" fill="#8b949e" font-size="11">encrypted · ~1 Gbps · hours to set up</text>
+
+  <line x1="440" y1="380" x2="760" y2="380" stroke="#f0883e" stroke-width="4" filter="url(#glow)"/>
+  <circle cx="600" cy="380" r="16" fill="#0d1117" stroke="#f0883e" stroke-width="2"/>
+  <text x="600" y="387" text-anchor="middle" fill="#f0883e" font-size="16">⚡</text>
+  <text x="600" y="358" text-anchor="middle" fill="#f0883e" font-size="13" font-weight="700">Dedicated interconnect</text>
+  <text x="600" y="420" text-anchor="middle" fill="#8b949e" font-size="11">Direct Connect / ExpressRoute · up to 100 Gbps</text>
+
+  <!-- Legend -->
+  <rect x="40" y="520" width="1120" height="80" rx="12" fill="#161b22" stroke="#30363d"/>
+  <text x="70" y="550" fill="#8b949e" font-size="12" font-weight="700" letter-spacing="1">LEGEND</text>
+  <line x1="70" y1="572" x2="110" y2="572" stroke="#3fb950" stroke-width="3" stroke-dasharray="8 5"/><text x="120" y="577" fill="#c9d1d9" font-size="13">Encrypted tunnel (VPN)</text>
+  <line x1="330" y1="572" x2="370" y2="572" stroke="#f0883e" stroke-width="4"/><text x="380" y="577" fill="#c9d1d9" font-size="13">Private fiber (interconnect)</text>
+  <circle cx="640" cy="572" r="5" fill="#3fb950"/><text x="652" y="577" fill="#c9d1d9" font-size="13">Healthy</text>
+  <circle cx="740" cy="572" r="5" fill="#d29922"/><text x="752" y="577" fill="#c9d1d9" font-size="13">Degraded</text>
+  <text x="1090" y="577" text-anchor="end" fill="#6e7681" font-size="12">cloud-daily · day 01</text>
+</svg>
