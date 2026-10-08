@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 720" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif">
+  <rect width="1240" height="720" fill="#ffffff"/>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#545b64"/>
+    </marker>
+    <marker id="arrD" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#879596"/>
+    </marker>
+    <style>
+      .svc { fill: #ffffff; stroke: #232f3e; stroke-width: 1.5; }
+      .strip { fill: #ff9900; }
+      .name { fill: #232f3e; font-size: 14px; font-weight: 700; }
+      .sub { fill: #545b64; font-size: 11px; }
+      .lbl { fill: #545b64; font-size: 12px; }
+      .lblD { fill: #879596; font-size: 12px; font-style: italic; }
+      .wire { stroke: #545b64; stroke-width: 2; fill: none; }
+      .wireD { stroke: #879596; stroke-width: 2; fill: none; stroke-dasharray: 7 5; }
+      .title { fill: #232f3e; font-size: 24px; font-weight: 700; }
+      .subtitle { fill: #545b64; font-size: 14px; }
+      .step { fill: #ff9900; }
+      .stepT { fill: #ffffff; font-size: 13px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <text x="620" y="40" text-anchor="middle" class="title">RAG Chatbot on AWS — Reference Architecture</text>
+  <text x="620" y="64" text-anchor="middle" class="subtitle">Amazon Bedrock + Lambda + S3 + OpenSearch Serverless + DynamoDB + API Gateway</text>
+
+  <!-- ============ SERVICE BOXES ============ -->
+  <!-- User -->
+  <g>
+    <rect x="30" y="150" width="130" height="70" rx="6" class="svc"/>
+    <rect x="30" y="150" width="130" height="8" rx="4" class="strip"/>
+    <text x="95" y="186" text-anchor="middle" class="name">User</text>
+    <text x="95" y="204" text-anchor="middle" class="sub">browser / app</text>
+  </g>
+  <!-- CloudFront -->
+  <g>
+    <rect x="210" y="150" width="150" height="70" rx="6" class="svc"/>
+    <rect x="210" y="150" width="150" height="8" rx="4" class="strip"/>
+    <text x="285" y="186" text-anchor="middle" class="name">CloudFront</text>
+    <text x="285" y="204" text-anchor="middle" class="sub">CDN + TLS</text>
+  </g>
+  <!-- API Gateway -->
+  <g>
+    <rect x="410" y="150" width="150" height="70" rx="6" class="svc"/>
+    <rect x="410" y="150" width="150" height="8" rx="4" class="strip"/>
+    <text x="485" y="186" text-anchor="middle" class="name">API Gateway</text>
+    <text x="485" y="204" text-anchor="middle" class="sub">auth + throttle</text>
+  </g>
+  <!-- Lambda orchestrator -->
+  <g>
+    <rect x="610" y="140" width="180" height="90" rx="6" class="svc" stroke-width="2.5"/>
+    <rect x="610" y="140" width="180" height="8" rx="4" class="strip"/>
+    <text x="700" y="176" text-anchor="middle" class="name">Lambda</text>
+    <text x="700" y="196" text-anchor="middle" class="sub">orchestrator</text>
+    <text x="700" y="212" text-anchor="middle" class="sub">retrieve → prompt → answer</text>
+  </g>
+  <!-- DynamoDB -->
+  <g>
+    <rect x="850" y="150" width="150" height="70" rx="6" class="svc"/>
+    <rect x="850" y="150" width="150" height="8" rx="4" class="strip"/>
+    <text x="925" y="186" text-anchor="middle" class="name">DynamoDB</text>
+    <text x="925" y="204" text-anchor="middle" class="sub">chat history</text>
+  </g>
+  <!-- Bedrock -->
+  <g>
+    <rect x="610" y="360" width="180" height="90" rx="6" class="svc" stroke-width="2.5"/>
+    <rect x="610" y="360" width="180" height="8" rx="4" class="strip"/>
+    <text x="700" y="396" text-anchor="middle" class="name">Bedrock</text>
+    <text x="700" y="416" text-anchor="middle" class="sub">Claude / Llama / Nova</text>
+    <text x="700" y="432" text-anchor="middle" class="sub">serverless inference</text>
+  </g>
+  <!-- OpenSearch -->
+  <g>
+    <rect x="850" y="360" width="180" height="90" rx="6" class="svc"/>
+    <rect x="850" y="360" width="180" height="8" rx="4" class="strip"/>
+    <text x="940" y="396" text-anchor="middle" class="name">OpenSearch</text>
+    <text x="940" y="414" text-anchor="middle" class="sub">Serverless · vectors</text>
+  </g>
+  <!-- S3 -->
+  <g>
+    <rect x="360" y="360" width="150" height="90" rx="6" class="svc"/>
+    <rect x="360" y="360" width="150" height="8" rx="4" class="strip"/>
+    <text x="435" y="396" text-anchor="middle" class="name">S3</text>
+    <text x="435" y="414" text-anchor="middle" class="sub">source documents</text>
+  </g>
+  <!-- CloudWatch -->
+  <g>
+    <rect x="610" y="540" width="180" height="70" rx="6" class="svc"/>
+    <rect x="610" y="540" width="180" height="8" rx="4" class="strip"/>
+    <text x="700" y="576" text-anchor="middle" class="name">CloudWatch</text>
+    <text x="700" y="594" text-anchor="middle" class="sub">logs · metrics · alarms</text>
+  </g>
+
+  <!-- ============ QUERY PATH (solid) ============ -->
+  <line x1="160" y1="185" x2="205" y2="185" class="wire" marker-end="url(#arr)"/>
+  <text x="182" y="175" text-anchor="middle" class="lbl">HTTPS</text>
+
+  <line x1="360" y1="185" x2="405" y2="185" class="wire" marker-end="url(#arr)"/>
+
+  <line x1="560" y1="185" x2="605" y2="185" class="wire" marker-end="url(#arr)"/>
+  <text x="582" y="175" text-anchor="middle" class="lbl">POST /chat</text>
+
+  <!-- Lambda -> DynamoDB -->
+  <line x1="790" y1="185" x2="845" y2="185" class="wire" marker-end="url(#arr)"/>
+  <text x="817" y="175" text-anchor="middle" class="lbl">history</text>
+
+  <!-- Lambda -> Bedrock -->
+  <line x1="700" y1="230" x2="700" y2="355" class="wire" marker-end="url(#arr)"/>
+  <text x="712" y="295" class="lbl">InvokeModel</text>
+  <text x="712" y="311" class="lbl">(prompt+context)</text>
+
+  <!-- Lambda -> OpenSearch -->
+  <path d="M 790 210 L 850 210 L 850 405 L 845 405" class="wire" marker-end="url(#arr)"/>
+  <text x="868" y="300" class="lbl">top-k</text>
+  <text x="868" y="316" class="lbl">vectors</text>
+
+  <!-- Lambda -> S3 (retrieve path note) -->
+  <path d="M 610 210 L 560 210 L 560 405 L 505 405" class="wireD" marker-end="url(#arrD)"/>
+  <text x="480" y="300" text-anchor="middle" class="lblD">ingest (async):</text>
+  <text x="480" y="318" text-anchor="middle" class="lblD">EventBridge + Lambda</text>
+  <text x="480" y="336" text-anchor="middle" class="lblD">chunk &amp; embed</text>
+
+  <!-- Observe (dashed) -->
+  <path d="M 640 230 L 600 230 L 600 575 L 605 575" class="wireD" marker-end="url(#arrD)"/>
+  <path d="M 640 450 L 600 450 L 600 575 L 605 575" class="wireD" marker-end="url(#arrD)"/>
+  <text x="560" y="420" text-anchor="middle" class="lblD">metrics,</text>
+  <text x="560" y="438" text-anchor="middle" class="lblD">token logs</text>
+
+  <!-- ============ STEP NUMBERS ============ -->
+  <g>
+    <circle cx="700" cy="110" r="14" class="step"/><text x="700" y="115" text-anchor="middle" class="stepT">1</text>
+    <text x="700" y="92" text-anchor="middle" class="lbl">ask</text>
+    <circle cx="940" cy="330" r="14" class="step"/><text x="940" y="335" text-anchor="middle" class="stepT">2</text>
+    <text x="940" y="312" text-anchor="middle" class="lbl">retrieve</text>
+    <circle cx="806" cy="330" r="14" class="step"/><text x="806" y="335" text-anchor="middle" class="stepT">3</text>
+    <text x="806" y="312" text-anchor="middle" class="lbl">answer</text>
+    <circle cx="806" cy="540" r="14" class="step"/><text x="806" y="545" text-anchor="middle" class="stepT">4</text>
+    <text x="806" y="522" text-anchor="middle" class="lbl">observe</text>
+  </g>
+
+  <text x="620" y="680" text-anchor="middle" class="subtitle">Solid = request path · Dashed = async ingest &amp; observability · Orange = AI / compute core</text>
+</svg>

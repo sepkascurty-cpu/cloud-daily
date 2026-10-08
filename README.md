@@ -25,5 +25,6 @@ A living journal of cloud engineering — one topic a day: deep-dives, architect
 | Day | Date | Topic | Focus |
 |-----|------|-------|-------|
 | 01 | 2026-10-08 | [Hybrid Cloud](https://github.com/sepkascurty-cpu/hybrid-cloud-guide) → standalone repo | Architecture · Networking · Terraform |
+| 02 | 2026-10-09 | [AI Architecture on AWS](daily/2026-10-09-aws-ai/README.md) | Bedrock · RAG · Serverless |
 
 _More days coming. The cloud never sleeps._
