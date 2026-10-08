@@ -7,9 +7,8 @@
 
 A living journal of cloud engineering — one topic a day: deep-dives, architecture diagrams, real code, quizzes, and curated videos. No fluff, no boring walls of text.
 
-**Start with today's entry: [Hybrid Cloud — The Complete, No-Boring Guide](daily/2026-10-08-hybrid-cloud/README.md)**.
-
-<img src="./daily/2026-10-08-hybrid-cloud/architecture.svg" />
+> [!NOTE]
+> 🎓 Day 01 (Hybrid Cloud) graduated to its own repository: **[hybrid-cloud-guide](https://github.com/sepkascurty-cpu/hybrid-cloud-guide)**.
 
 ## How this journal works
 
@@ -25,6 +24,6 @@ A living journal of cloud engineering — one topic a day: deep-dives, architect
 
 | Day | Date | Topic | Focus |
 |-----|------|-------|-------|
-| 01 | 2026-10-08 | [Hybrid Cloud](daily/2026-10-08-hybrid-cloud/README.md) | Architecture · Networking · Terraform |
+| 01 | 2026-10-08 | [Hybrid Cloud](https://github.com/sepkascurty-cpu/hybrid-cloud-guide) → standalone repo | Architecture · Networking · Terraform |
 
 _More days coming. The cloud never sleeps._
